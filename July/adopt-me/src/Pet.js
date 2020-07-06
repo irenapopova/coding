@@ -1,18 +1,20 @@
 import React from 'react';
+import { Link } from '@reach/router';
 
-export default function Pet({ name, animal, breed }) {
-  /* return React.createElement("div".{}, [
-    React.createElement("h1", {}, name),
-    React.createElement("h1", {}, animal),
-    React.createElement("h1", {}, breed)
-  ]); */
+const Pet = props => {
+
+  const { name, animal, breed, location, id } = props;
+
 
   return (
-    <div>
-      <h1>{name}</h1>
-      <h1>{animal}</h1>
-      <h1>{breed}</h1>
+    <link to={`/data/${id}`} className='pet'>
+      <div className="info">
 
-    </div>
+        <h1>{name} </h1>
+        <h2>{`${animal} - ${breed} . ${location}`</h2>
+
+      </div>
+    </link>
   );
-}
+};
+export default Pet;
