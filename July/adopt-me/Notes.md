@@ -64,3 +64,59 @@ export default SearchParams;
 #### How does react work in terms of re-rendering?
 
 - every time that something is changing it runs the re-render function , it runs the searchParams function again
+
+```js
+
+import React, { useState, useEffect, useContext } from "react";
+import useDropdown from './useDropdown';
+
+const SearchParams = () => {
+  const [location, setLocation] = useState("Berlin, DE");
+  const [animal, setBreed] = useState("dog");
+  const [breed, setAnimal] = useState("");
+  const [breeds, setBreeds] = useState([]);
+
+  return (
+    <div className="search-params">
+      <form>
+        <label htmlFor="location">
+          Location
+        <input id="location" value={location}
+            placeholder="location"
+            onChange={e => setLocation(e.target.value)} />
+        </label>
+
+        <label htmlFor="breed">
+          Breed
+        <select
+            id="breed"
+            value=[breed]
+            onChange={e => setBreed(e.target.value)}
+            onBlur={e => setBreed(e.target.value)}
+            disabled = {!breed.length === 0}
+        >
+
+        <option>All</option>
+          {breed.map(breeString => (
+            <option key={breedString} value={breedString}>
+              {breedString}
+            </option>
+          ))}
+        </select>
+
+        </label>
+      <button >Submit</button>
+      </form>
+
+    </div >
+
+  );
+
+};
+export default SearchParams;
+
+
+//** what is a CUSTOM HOOK  ?*/
+```
+
+### How to handle a synchronous code inside of react?
