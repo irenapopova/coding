@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(logger); // first execute logger and then
-
+// any requests express handles with logger
 // we have access to  next in any route handling, but no need to do it
 // the route handling is the : "/" - the slash
 app.get("/", (req, res, next) => {
@@ -11,11 +11,12 @@ app.get("/", (req, res, next) => {
   res.send(`Home`);
 });
 // route handling 
-app.get("/about", userLogged,(req, res) => {
+app.get("/about", userLogged, (req, res) => {
   console.log(`about`);
   res.send(`Hey`);
 });
 
+// the function is global 
 function logger(req, res, next) {
   console.log("log 1");
   next(); // next is not return
