@@ -54,7 +54,7 @@ app.get("/user", async (req, res) => {
 
 // Post method     url http://localhost:3000/login
 //  {
-//     "userName": "Hadi",
+//     "userName": "Irene",
 //      "pass":"000callme000"
 //  }
 //
