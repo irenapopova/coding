@@ -1,1 +1,1 @@
-const {}
+const {a+b}
