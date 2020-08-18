@@ -1,5 +1,7 @@
 const express = require("express");
 const touter = express.Router();
+const EmployeesData = require("../model/employeesModel")
+// get all employee
 // url http://localhost:3000/employees 
 // start a callback with async
 router.get("/".async(req, res) => {
