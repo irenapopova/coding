@@ -30,9 +30,29 @@ const getAdd = async (req, res, next) => {
       message: err.message,
     });
   }
+  console.log(employee);
+  // res.employee = employee;
+  next();
+};
+// what is ????
+const getAdd = async (req, res, next) => {
+  let employee;
+  try {
+    // employee = await EmployeesData.find({ add: req.params.add }).limit(70);
+    employee = await EmployeesData.find({ add: req.params.add });
+    if (employee == null)
+      return res.status(404).json({ message: "employee NOT Found" });
+  } catch (err) {
+    res.status(500).json({
+      message: err.message,
+    });
+  }
   res.employee = employee;
   next();
 };
+
+
+// 
 const getAllEmployee = async (req, res) => {
   try {
     const employees = await EmployeesData.find();
@@ -41,12 +61,14 @@ const getAllEmployee = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+// add new employee
 const addNewEmployee = async (req, res) => {
   const employee = new EmployeesData({
     name: req.body.name,
     age: req.body.age,
     add: req.body.add,
   });
+  // 
   try {
     const newEmployee = await employee.save();
     res.status(201).json(newEmployee);
@@ -56,9 +78,11 @@ const addNewEmployee = async (req, res) => {
     });
   }
 };
+// 
 const getOneEmployee = (req, res) => {
   res.status(200).json(res.employee);
 };
+// updating 
 const updateOneEmployee = async (req, res) => {
   console.log(req.body);
   if (req.body.name != null) {
@@ -67,9 +91,11 @@ const updateOneEmployee = async (req, res) => {
   if (req.body.age != null) {
     res.employee.age = req.body.age;
   }
+  //
   if (req.body.add != null) {
     res.employee.add = req.body.add;
   }
+  //
   try {
     await res.employee.save();
     res.status(200).json({ message: "Employee updated", data: res.employee });
@@ -79,6 +105,7 @@ const updateOneEmployee = async (req, res) => {
     });
   }
 };
+// delete operant
 const deleteOneEmployee = async (req, res) => {
   try {
     await res.employee.remove();
@@ -89,6 +116,41 @@ const deleteOneEmployee = async (req, res) => {
     });
   }
 };
+// update 
+
+const updateAllEmployeeData = async (req, res) => {
+  try {
+    await EmployeesData.update(
+      { name: req.params.name },
+      {
+        $set: {
+          name: req.body.name,
+          age: req.body.age,
+          add: req.body.add,
+        },
+      }
+    );
+    res.status(200).json({ message: "Employee Updated" });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+// 
+const updateManyEmployees = async (req, res) => {
+  try {
+    await EmployeesData.updateMany(
+      { add: req.params.add },
+      {
+        $set: { add: req.body.add },
+      }
+    );
+    res.status(200).json({ message: "Add got update" });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+// modules 
+// 
 module.exports = {
   getEmployee,
   getAdd,
@@ -97,4 +159,9 @@ module.exports = {
   getOneEmployee,
   addNewEmployee,
   deleteOneEmployee,
+  updateAllEmployeeData,
+  updateManyEmployees,
 };
+
+// Questions 
+// Mongo DB methods ?
