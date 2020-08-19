@@ -19,14 +19,18 @@ const getEmployee = async (req, res, next) => {
   res.employee = employee;
   next();
 };
+//
 const getAdd = async (req, res, next) => {
   let employee;
+  // 
   try {
-    employee = await EmployeesData.find({ add: req.params.add });
+    // employee = await EmployeesData.find({ add: req.params.add }).limit(70);
+     employee = await EmployeesData.find({ add: req.params.add });
     if (employee == null)
+    // 
       return res.status(404).json({ message: "employee NOT Found" });
   } catch (err) {
-    res.status(500).json({
+    res.status(500).json({ // 
       message: err.message,
     });
   }
@@ -52,7 +56,7 @@ const getAdd = async (req, res, next) => {
 };
 
 
-// 
+// getAllEmployee
 const getAllEmployee = async (req, res) => {
   try {
     const employees = await EmployeesData.find();
@@ -78,13 +82,15 @@ const addNewEmployee = async (req, res) => {
     });
   }
 };
-// 
+// getOneEmployee
 const getOneEmployee = (req, res) => {
   res.status(200).json(res.employee);
 };
+
 // updating 
 const updateOneEmployee = async (req, res) => {
   console.log(req.body);
+  
   if (req.body.name != null) {
     res.employee.name = req.body.name;
   }
