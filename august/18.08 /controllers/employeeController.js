@@ -19,7 +19,7 @@ const getEmployee = async (req, res, next) => {
   res.employee = employee;
   next();
 };
-//
+// 
 const getAdd = async (req, res, next) => {
   let employee;
   // 
@@ -38,23 +38,9 @@ const getAdd = async (req, res, next) => {
   // res.employee = employee;
   next();
 };
-// what is ????
-const getAdd = async (req, res, next) => {
-  let employee;
-  try {
-    // employee = await EmployeesData.find({ add: req.params.add }).limit(70);
-    employee = await EmployeesData.find({ add: req.params.add });
-    if (employee == null)
-      return res.status(404).json({ message: "employee NOT Found" });
-  } catch (err) {
-    res.status(500).json({
-      message: err.message,
-    });
-  }
-  res.employee = employee;
-  next();
-};
 
+
+//====================================
 
 // getAllEmployee
 const getAllEmployee = async (req, res) => {
@@ -169,7 +155,7 @@ module.exports = {
   addNewEmployee,
   deleteOneEmployee,
   updateAllEmployeeData,
-  updateManyEmployees,
+  /* updateManyEmployees, */
 };
 
 
