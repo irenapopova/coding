@@ -1,4 +1,5 @@
 const express = require("express");
+// starting the express server
 const app = express();
 const morgan = require("morgan");
 app.use(morgan("dev"));
@@ -11,6 +12,7 @@ app.use(bodyParser.raw());
 
 const mongoose = require("mongoose");
 mongoose
+// to connect with .env variables , PORT
   .connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
