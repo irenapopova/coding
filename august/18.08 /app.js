@@ -10,20 +10,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 // mongoDB 
 
+
+
 const mongoose = require("mongoose");
 mongoose
-// to connect with .env variables , PORT
+  // to connect with .env variables , PORT
   .connect(process.env.DB_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-  .then(console.log('DB is connected'))
-      .catch(error)=> {
-    console.log(`There was a problem ${error.message}`);
-  });
+    useUnifiedTopology: true
+  })
+  .then((res) => console.log('Database Connected'))
 app.use(express.json());
 // router 
 const employees = require("./router/employees");
 
-app.use("/employees",employees): // the last is which file will handle it
+// the string bellow "employees" I have to add it to postman POST where is the url localhost, 
+app.use("/employees", employees); // the last is which file will handle it
 
 module.exports = app;
