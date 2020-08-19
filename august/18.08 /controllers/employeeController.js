@@ -82,12 +82,12 @@ const addNewEmployee = async (req, res) => {
     });
   }
 };
-// getOneEmployee
+// ==getOneEmployee === //
 const getOneEmployee = (req, res) => {
   res.status(200).json(res.employee);
 };
 
-// updating 
+//! ==== updating One Employee  =====// 
 const updateOneEmployee = async (req, res) => {
   console.log(req.body);
   
@@ -111,7 +111,8 @@ const updateOneEmployee = async (req, res) => {
     });
   }
 };
-// delete operant
+
+// With 'DELETE' operant to remove Employee =====//
 const deleteOneEmployee = async (req, res) => {
   try {
     await res.employee.remove();
@@ -122,7 +123,8 @@ const deleteOneEmployee = async (req, res) => {
     });
   }
 };
-// update 
+
+// ! update All Employees  =========//
 
 const updateAllEmployeeData = async (req, res) => {
   try {
@@ -141,10 +143,11 @@ const updateAllEmployeeData = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
-// 
-const updateManyEmployees = async (req, res) => {
+
+//  UPDATE * MANY * Employees DATA  ========//
+const updateManyEmployeeData = async (req, res) => {
   try {
-    await EmployeesData.updateMany(
+    await EmployeesData.updateMany(  //!updateMany
       { add: req.params.add },
       {
         $set: { add: req.body.add },
@@ -155,7 +158,7 @@ const updateManyEmployees = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
-// modules 
+// modules =============//
 // 
 module.exports = {
   getEmployee,
@@ -168,6 +171,8 @@ module.exports = {
   updateAllEmployeeData,
   updateManyEmployees,
 };
+
+
 
 // Questions 
 // Mongo DB methods ?
