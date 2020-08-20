@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 // CREATING A MODEL / Schema is how should look and have inside the MongoDB DATABASE
 const employeesDataSchema = new mongoose.Schema({
+  // I am specifying the database: name, age, address, 
   name: {
     type: String,
     required: true,

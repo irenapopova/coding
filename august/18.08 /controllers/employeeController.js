@@ -25,9 +25,9 @@ const getAdd = async (req, res, next) => {
   // 
   try {
     // employee = await EmployeesData.find({ add: req.params.add }).limit(70);
-     employee = await EmployeesData.find({ add: req.params.add });
+    employee = await EmployeesData.find({ add: req.params.add });
     if (employee == null)
-    // 
+      // 
       return res.status(404).json({ message: "employee NOT Found" });
   } catch (err) {
     res.status(500).json({ // 
@@ -45,8 +45,32 @@ const getAdd = async (req, res, next) => {
 // getAllEmployee
 const getAllEmployee = async (req, res) => {
   try {
-    const employees = await EmployeesData.find();
-    res.status(200).json(employees);
+    // with a await we  go to the database and then with EmployeesData.find(); we go inside the collection mongoDB,
+    const employees = await EmployeesData.find(); // find goes to the database and gets all the data for the employees or whatever the data is
+    // res.status(200).json(employees); // res.status line send the info back to postman
+    // console.log(employees);
+    //client -> postman (it's like the browser)
+    //server -> express /nodejs
+
+    //send a request using postman to the server: like http://localhost:3000/employees
+    //server will process the request and send back the response.
+    //the server send a response back using res.status(200).json({employees})
+    res.status(200).json(
+      employees.map((employee) => {
+        // creating a new object based on old one , 
+        return {
+          employeeId: employee._id,
+          employeeName: employee.name,
+          age: employee.age,
+          employeeAddedDate: employee.employeeAddedDate,
+          request: {
+            type: "GET",
+            url: `http://localhost:3000/employees/${employee.name}`,
+          },
+        };
+      })
+    );
+
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -54,13 +78,15 @@ const getAllEmployee = async (req, res) => {
 // add new employee
 const addNewEmployee = async (req, res) => {
   const employee = new EmployeesData({
+    // Request contains many information among them are headers, body or authorization
+    // Body below is a representation of the employee itself coming as part of JSON
     name: req.body.name,
     age: req.body.age,
     add: req.body.add,
   });
-  // 
+  // try to execute if not the control goes to catch block
   try {
-    const newEmployee = await employee.save();
+    const newEmployee = await employee.save(); // save is mongoose method; i give the above info to mongoose, and mongoose maps/converts the info to be understandable to mongoDB
     res.status(201).json(newEmployee);
   } catch (err) {
     res.status(400).json({
@@ -68,6 +94,7 @@ const addNewEmployee = async (req, res) => {
     });
   }
 };
+
 // ==getOneEmployee === //
 const getOneEmployee = (req, res) => {
   res.status(200).json(res.employee);
@@ -76,7 +103,7 @@ const getOneEmployee = (req, res) => {
 //! ==== updating One Employee  =====// 
 const updateOneEmployee = async (req, res) => {
   console.log(req.body);
-  
+
   if (req.body.name != null) {
     res.employee.name = req.body.name;
   }
@@ -114,7 +141,10 @@ const deleteOneEmployee = async (req, res) => {
 
 const updateAllEmployeeData = async (req, res) => {
   try {
-    await EmployeesData.update(
+    // update (method of MongoDB) and updateOne IS methods (MONGOOSE)  and it modifies only one document, and updateOne is a mongoose
+  // update() : By default, the update() method updates a single document.Include the option { multi: true } to update all documents that match the query criteria.Hence we can use it as both ways.
+    await EmployeesData.updateOne(
+      // updateOne() : It update only one top most document in a collection with matching filter.
       { name: req.params.name },
       {
         $set: {

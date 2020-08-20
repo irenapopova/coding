@@ -1,0 +1,47 @@
+1,Irena,34
+2,Daniel,12
+3,Zeus,-100
+4,Chakri,23
+
+These are the advantages using a DBMS or DataBase
+- Yes security
+- Yes schema
+- Yes it can hadle complex to maintain the code 
+
+
+DBMS - Concept
+Relational DBMS - implementation of DBMS
+1. Oracle Database
+2. Mysql
+3. Postgres
+3. Sqlite
+ms sql server
+ACID - Atomicity Consistent Isolation  
+
+
+NoSQL - Not only SQL
+CAP - Consistency avaliablity parition tolerance
+- the below belong to CAP
+Redis
+MongoDB
+Cassandra
+
+Consistency           - same result now or many times
+avaliablity           - how robustly our system is stable 
+Parition tolerance    - removal of systems or adding new systems how well the systems behave with each other
+
+- it depends what I want in website / app 
+if I want availability and consistency I choose , i need Mysql
+
+              MongoDB - is a NOSQL database
+
+
+
+
+
+
+              MongoDB (German)
+                    || 
+            Mediatrot + translator (Mongoose) // the two are building a pipe line to communicate 
+                    ||
+Java + Python + JavaScript + .Net + C# (Bulgarian)

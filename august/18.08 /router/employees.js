@@ -4,6 +4,7 @@ const EmployeesData = require("../model/employeesModel")
 // get all employee
 // url http://localhost:3000/employees 
 // start a callback with async
+// 
 const {
   getEmployee,
   getAdd,
@@ -54,14 +55,14 @@ router.get("/", async (req, res) => {
 // add employees 
 router.post("/", async (req, res) => {
   const employee = new EmployeesData({ // the body express is waiting and in postman I have to put the same body in order to create a new employee, 
-    name: req.body.name,
+    name: req.body.name, // {"name": "Chakri", "age": 45, "address": "Landgrafen"} -json
     age: req.body.age,
     address: req.body.address,
   });
-
-  try {
-    const newEmployee = await employee.save();
-    res.status(201).json(newEmployee);
+  // in try in .save is executing a mongoose action
+  try { // it tries to save if not goes to catch block
+    const newEmployee = await employee.save(); // save is a mongoose method to save info to database
+    res.status(201).json(newEmployee); 
   } catch (err) {
     res.status(400).json({
       message: err.message,
