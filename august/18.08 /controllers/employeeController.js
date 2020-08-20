@@ -142,7 +142,7 @@ const deleteOneEmployee = async (req, res) => {
 const updateAllEmployeeData = async (req, res) => {
   try {
     // update (method of MongoDB) and updateOne IS methods (MONGOOSE)  and it modifies only one document, and updateOne is a mongoose
-  // update() : By default, the update() method updates a single document.Include the option { multi: true } to update all documents that match the query criteria.Hence we can use it as both ways.
+    // update() : By default, the update() method updates a single document.Include the option { multi: true } to update all documents that match the query criteria.Hence we can use it as both ways.
     await EmployeesData.updateOne(
       // updateOne() : It update only one top most document in a collection with matching filter.
       { name: req.params.name },

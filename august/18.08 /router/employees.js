@@ -62,7 +62,7 @@ router.post("/", async (req, res) => {
   // in try in .save is executing a mongoose action
   try { // it tries to save if not goes to catch block
     const newEmployee = await employee.save(); // save is a mongoose method to save info to database
-    res.status(201).json(newEmployee); 
+    res.status(201).json(newEmployee);
   } catch (err) {
     res.status(400).json({
       message: err.message,
