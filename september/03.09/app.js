@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
   });
   req.session.errors = null;
 });
-
+// important part 👇 - have to understand very well
 app.post("/submit", (req, res) => {
   req.check("email", "Invalid Email").isEmail();
   // isMobilePhone

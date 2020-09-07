@@ -1,0 +1,1 @@
+in project folder type-  nodemon - to connect with postman 
