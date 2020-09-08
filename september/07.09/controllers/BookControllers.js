@@ -35,8 +35,11 @@ const addOne = async (req, res) => {
   const author = new authorModel({
     authorName: req.body.name,
   });
+  // important line 
   req.body.books.map((book) =>
+  // in the title should match the value, 
     author.books.push({ title: book.title, issueYear: book.year })
+    // in the issueYear
   );
   try {
     const newAuthor = await author.save();
