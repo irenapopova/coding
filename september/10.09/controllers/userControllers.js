@@ -44,6 +44,8 @@ userControllers.addUser = async (req, res) => {
         _id: mongoose.Types.ObjectId(),
         userName: req.body.userName,
         password: hashedPassword,
+        role: "USER",
+        //role: "ADMIN",
       });
       newUser.save();
       res.status(201).send("new user add <br> <a href='/login'>login</a>");
@@ -70,6 +72,8 @@ userControllers.login = async (req, res) => {
       res.cookie("session_id", sessionId, {
         expires: new Date(Date.now() + 900000), // cookie will expire after 15 min
       });
+      // add role
+      res.cookie("role")
       // register the uuid session
       let session = new Session({
         uuid: sessionId,
@@ -93,5 +97,32 @@ userControllers.login = async (req, res) => {
     });
   }
 };
+
+userControllers.getOne = (req, res) => {
+  const userName = req.params.name
+  try {
+    const user = await User.findOne({ userName })
+    res.status(200).json(user)
+
+  } catch (err) {
+    res.status(404).json({
+      massage: err.message
+    })
+  }
+}
+
+userControllers.deleteOneById = (req, res) => {
+  const userName = req.params.name
+  try {
+    const user = await User.findOne({ userName })
+    res.status(200).json(user) // rendering the object that is coming from Mongo,so no need to wrap user in {}
+
+  } catch (err) {
+    res.status(404).json({
+      massage: err.message
+    })
+  }
+}
+
 
 module.exports = userControllers;
