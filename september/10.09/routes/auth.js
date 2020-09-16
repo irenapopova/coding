@@ -1,6 +1,16 @@
 const userControllers = require("../controllers/userControllers");
 const express = require("express");
 const router = express.Router();
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null,, "./uploads");
+  },
+  filename: function () {
+
+  },
+}
+})
 // the root rout
 router.get("/", (req, res) => {
   res.render("index", {
