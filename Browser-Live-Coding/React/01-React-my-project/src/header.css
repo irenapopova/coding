@@ -1,0 +1,9 @@
+ul{
+    display: flex;
+    text-decoration: none;
+    background-color: aqua;
+}
+li{
+    width: 200px;
+    padding: 10px;
+}

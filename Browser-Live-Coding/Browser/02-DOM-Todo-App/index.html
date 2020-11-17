@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+   <style>
+       .heading{
+        padding:10px;
+        background-color:red;
+        text-align:center;
+       }
+       .list{
+        display:flex;
+        justify-content:space-between;
+        border:2px solid black;
+        margin:2px;
+        background-color: red;
+        color: white;
+       }
+       .done{
+           background-color: green;
+       }
+       span{
+        position:relative;
+        right:30px;
+        cursor: pointer;  
+       }
+   </style>
+</head>
+<body>
+    <h1 class="heading">Todo APP</h1>
+   <!--  crud operation (create read update delete) -->
+ <!--get request  (retreive/read data from external source)
+    post request (add/create data into resources )
+    patch/put request (update your resources)
+    delete request (delete any data from your resources)-->
+
+    <!-- in form by default method is GET -->
+    <!-- with form you always use submit event -->
+    <form>
+        <input type="text">
+        <input type="submit" value="add task">
+    </form>
+    
+    <ul>
+      <!--  <li class="list">Task 1 <span>X</span></li>
+       <li class="list">Task 2 <span>X</span></li>
+       <li class="list">Task 3 <span>X</span></li>
+       <li class="list">Task 4 <span>X</span></li> -->
+
+    </ul>
+
+
+<script src="index.js"></script>
+
+</body>
+</html>
