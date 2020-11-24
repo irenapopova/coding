@@ -1,0 +1,71 @@
+/* Typography */
+/* to link a font @font-face */
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(../fonts/JosefinSans-VariableFont_wght.ttf);
+}
+/* font-family */
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+:root {
+  font-size: 16px;
+  --color-font: rgba(23, 4, 5, 0.3);
+  --hadi-main-text: 2px 2px;
+}
+h1 {
+  font-family: "Josefin Sans";
+  font-size: 1rem;
+  color: var(--color-font);
+  padding: var(--hadi-main-text);
+}
+div {
+  font-size: 20px;
+}
+/* em and rem */
+/* font-size */
+/* font-style */
+/*  font-weight */
+/* 100 - 900 */
+/* font shorthand 
+font: italic 1.2em "Fira Sans", serif;
+*/
+/* setting up the :root */
+
+/* line-height */
+/* text-transform  */
+
+/* text-align */
+
+/* direction */
+p {
+  font-size: 1em;
+  font-style: oblique 10deg;
+  font-weight: bold;
+  /* font: italic bold 2rem "Josefin Sans", serif; */
+  line-height: 2em;
+  /* text-align: justify; */
+  text-transform: uppercase;
+}
+h1 {
+  /* direction: rtl; */
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  text-shadow: 2px 2px 2px orange, 3px 3px 5px pink, 4px 2px gray;
+}
+p {
+  /* word-break: keep-all; */
+  text-indent: 3rem;
+  word-spacing: 5rem;
+}
+/* text-shadow */
+
+/* writing-mode */
+/* text-orientation */
+
+i {
+  color: hotpink;
+  font-size: xx-large;
+}

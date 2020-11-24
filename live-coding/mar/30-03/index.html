@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- my own css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Bootstrap</title>
+  </head>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Dance</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dance moves
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Call me</a>
+              <a class="dropdown-item" href="#">login</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      Hi, I am Bootstrap
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="./img/tree.jpg" class="card-img-top" alt="Tree pic" />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          This is text
+        </div>
+        <div class="col-2">
+          This is text
+        </div>
+        <div class="col">
+          This is text
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="page-header">
+        Hey, Welcome to my Page <small>learn more about me 🤓</small>
+      </h1>
+      <p class="lead">this is nothing but text</p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
+        blanditiis.
+      </p>
+    </div>
+    <hr />
+    <!-- aliment : left, center, right, justify, nowrap -->
+    <!-- capitalize,lowercase -->
+    <p class="text-center text-uppercase">test text</p>
+    <div class="float-right">⎈</div>
+    <div class="float-left">⎈</div>
+    <div class="clearfix"></div>
+    <br />
+    <ul class="list-unstyled">
+      <li>Food</li>
+      <li>Drink</li>
+      <li>Clothe</li>
+    </ul>
+    <div class="container">
+      <code>
+        &lt; section &gt; <br />
+        return 4 + 3; <br />
+        }
+      </code>
+    </div>
+    <!-- colors -->
+    <!-- primary,  success, info,danger,warning -->
+    <p class="bg-success ">Random text</p>
+    <p class="bg-info">Random text</p>
+    <div class="list-group">
+      <a href="#" class="list-group-item-active">First opi</a>
+      <a href="#" class="list-group-item list-group-item-success">Second opi</a>
+      <a href="#" class="list-group-item">Third opi</a>
+    </div>
+    <select multiple class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <div class="container">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="jumbotron col-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          eligendi aspernatur voluptas natus nisi aut, totam provident!
+          Aspernatur, est? Repudiandae maiores hic, tempore illum magnam tenetur
+          aut neque quibusdam amet.
+          <button type="button" class="btn btn-outline-dark">Dark</button>
+        </div>
+      </div>
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="name@example.com"
+        />
+      </div>
+      <div class="container">
+
+      <div class="col-6">
+      <div class="form-group ">
+        <label for="exampleFormControlSelect1">Example select</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <select multiple class="form-control" id="exampleFormControlSelect2">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Example textarea</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+    </form>
+    <div class="rounded-circle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, quis? Unde ea, accusantium distinctio possimus fugit odio. Inventore, laborum porro.</div>
+  </div>
+  </div>
+  
+  </body>
+</html>

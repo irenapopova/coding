@@ -1,0 +1,37 @@
+ul li {
+  color: red;
+}
+table {
+  background-color: seagreen;
+}
+th {
+  font-size: 22px;
+}
+td {
+  font-size: 11px;
+}
+#name {
+  color: snow;
+}
+#firstRow {
+  color: yellow;
+}
+.age {
+  color: violet;
+}
+.firstRow {
+  color: #d9212a;
+}
+div {
+  width: 50px;
+  height: 50px;
+}
+.div1 {
+  background-color: rgba(46, 109, 83, 0.973);
+}
+.div2 {
+  background-color: rgb(0, 255, 76);
+}
+#required {
+  color: red;
+}

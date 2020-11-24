@@ -1,0 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li:nth-child(2) {
+  background-color: lightgrey;
+}
+ul {
+  list-style: none;
+}

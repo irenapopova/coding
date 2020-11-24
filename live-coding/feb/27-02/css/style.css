@@ -1,0 +1,53 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration-color: greenyellow;
+  background-color: forestgreen;
+  text-decoration: none;
+  padding: 3px;
+}
+
+a:active {
+  color: lightblue;
+}
+a:link {
+  color: pink;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  transition: 3s;
+  background-color: darkcyan;
+  box-shadow: 3px 3px 2px rgba(95, 79, 78, 0.69);
+}
+nav ul li {
+  list-style: none;
+  display: inline;
+  border: 2px black solid;
+  padding: 5px;
+}
+div {
+  margin: 20px;
+}
+div p {
+  text-align: left;
+  padding: 5px;
+}
+div p:hover {
+  transition: 3s;
+  /* transition: ease-in; */
+  background-color: lightgray;
+}
+div h1 {
+  text-align: center;
+}
+div .ar {
+  text-align: right;
+}

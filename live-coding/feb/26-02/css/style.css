@@ -1,0 +1,120 @@
+/*
+to upload a font from local file
+@font-face {
+  font-family: "Indie Flower";
+  src: url("../font/IndieFlower-Regular.ttf") format("truetype");
+} */
+body {
+  /* background-image: url(../img/tree.jpg); */
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Indie Flower";
+}
+
+.doggy-img {
+  width: 50px;
+  height: 50px;
+  /* border short form */
+  border: 2px black solid;
+  border-top: 3px red dashed;
+  border-bottom: 3px red dashed;
+  padding: 10px 10px 20px 10px;
+  /* border long form pls never do it 😏 */
+  border-color: palegreen red black orange;
+  border-style: dotted solid;
+  border-width: 4px;
+  border-radius: 50% 10% 20% 33%;
+  font-family: "Indie Flower", Arial, Helvetica, sans-serif;
+  /* 
+  other ways 😊 
+  padding: 10px 50px;
+  padding: 10px; */
+  margin: 100px;
+
+  /* padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px; */
+}
+
+h1,
+h4,
+p,
+div {
+  color: pink;
+}
+/* styling my h1 */
+h1 {
+  font-size: 29px;
+}
+/* div {
+  width: 50px;
+  height: 50px;
+} */
+.sq {
+  background-color: lightgreen;
+  border: 2px black solid;
+}
+.re {
+  background-color: hotpink;
+  border: 2px black solid;
+  height: 70px;
+}
+.cl {
+  margin: 3px;
+  width: 40px;
+  height: 40px;
+  background-color: orange;
+  border: 2px black solid;
+  border-radius: 50%;
+}
+.tra {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-right: 20px solid blue;
+}
+
+.sp-cl {
+  /* margin: 0 auto; */
+  background-color: lightgreen;
+  border: 2px black solid;
+}
+.test-box {
+  width: 50%;
+  height: 34px;
+  border: 2px black solid;
+}
+.random-text {
+  letter-spacing: 2px;
+  word-spacing: 20px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: lowercase;
+  text-decoration: underline;
+  text-indent: 50px;
+}
+a {
+  text-decoration: none;
+}
+p:last-child {
+  background-color: blueviolet;
+}
+div p:only-child {
+  background-color: crimson;
+}
+.move {
+  width: 400px;
+  height: 100px;
+  background-color: blue;
+  border: 2px #ccc dotted;
+}
+.move:hover {
+  width: 800px;
+  height: 800px;
+  background-color: lightblue;
+  box-shadow: 5px 5px 5px gray;
+}

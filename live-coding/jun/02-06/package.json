@@ -1,0 +1,20 @@
+{
+  "name": "02-06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy": "chmod +x src/index.js && npm link",
+    "undeploy": "npm unlink"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "nodemon": "^2.0.4"
+  },
+  "bin": {
+    "weather": "src/index.js"
+  }
+}

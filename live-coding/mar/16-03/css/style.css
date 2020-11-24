@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  height: 100vh;
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 5rem 5rem 5rem;
+  grid-template-areas:
+    "box1 box1 box2"
+    "box1 box1 box2"
+    "box1 box1 box5";
+  row-gap: 3rem;
+  column-gap: 3rem;
+}
+.box1 {
+  background-color: green;
+  grid-area: box1;
+}
+.box2 {
+  background-color: gray;
+  /* grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2; */
+  grid-area: box2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box3 {
+  background-image: url(../img/nice-one.jpg);
+  background-size: cover;
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2; */
+  grid-area: box3;
+}
+.box4 {
+  background-color: pink;
+  /* grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2; */
+  grid-area: box4;
+  display: none;
+}
+.box5 {
+  background-color: red;
+  /* grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2; */
+  grid-area: box5;
+}

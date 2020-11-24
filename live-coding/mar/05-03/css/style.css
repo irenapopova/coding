@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  /* margin: 0; */
+  font-size: 16px;
+}
+body {
+  margin: 0 auto;
+}
+/* background-image  */
+
+.main-text {
+  display: flex;
+  /* padding: 2rem; */
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
+  background-image: url(../img/fly.gif), url(../img/sky.png);
+  background-repeat: repeat-x, no-repeat;
+  background-position: center;
+  background-size: 10rem, cover;
+  /* background: url(../img/sky.png),  no-repeat center; */
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* background-clip: border-box; */
+
+.ex1 {
+  border: 4px black dashed;
+  padding: 20px;
+  background-color: aqua;
+  background-clip: border-box;
+}
+.ex2 {
+  border: 4px black dashed;
+  padding: 20px;
+  background-color: aqua;
+  background-clip: content-box;
+}
+.ex3 {
+  border: 4px black dashed;
+  padding: 20px;
+  background-color: aqua;
+  background-clip: padding-box;
+}
+.ex4 {
+  color: transparent;
+  background-image: url(../img/tree.jpeg);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.ex5 {
+  background-image: url(../img/bird.png);
+  background-size: 55rem;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* npm live-server */

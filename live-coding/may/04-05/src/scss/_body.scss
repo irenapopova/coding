@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: arial;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+}
+h1 {
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+}
+img {
+  width: 4rem;
+  height: 4rem;
+}

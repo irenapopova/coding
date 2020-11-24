@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>The Perfect Menu</title>
+  </head>
+  <body>
+    <!-- &#8788; -->
+    <script>
+      console.log("Hi");
+    </script>
+    <button
+      id="click"
+      onclick="this.style.color='red'; this.style.fontSize='60px';"
+    >
+      <span>click Me</span>
+    </button>
+    <button id="shBtn" onclick="hideShow()">Hid/Show</button>
+    <div id="box"></div>
+    <script>
+      function hideShow() {
+        console.log("Hi, i am function");
+        // box.style.display = "none";
+        if (box.style.display == "none") {
+          box.style.display = "block";
+        } else {
+          box.style.display = "none";
+        }
+      }
+    </script>
+    <button id="color">Hi It's me</button>
+    <script>
+      color.onclick = function() {
+        console.log("Hi i am function");
+        this.style.backgroundColor = "red";
+        this.style.fontSize = "4rem";
+      };
+    </script>
+    <button onclick="box2.classList.remove('cool')">Show me</button>
+    <div id="box2" class="cool"></div>
+  </body>
+</html>
