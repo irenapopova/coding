@@ -1,0 +1,6 @@
+1. [session-storage-vs-local-storage-vs-cookie-](https://dev.to/bogicevic7/session-storage-vs-local-storage-vs-cookie-elc)
+2. [cookies-vs-localstorage-for-sessions](https://supertokens.io/blog/cookies-vs-localstorage-for-sessions-everything-you-need-to-know)
+3. [CodePen cookies vs local storage vs session storage](https://codepen.io/beaucarnes/pen/KmeRMx)
+4. [YouTube Cookies vs Local Storage vs Session](https://www.youtube.com/watch?v=GihQAC1I39Q)
+5. [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
+6. [JSON Web Token](https://jwt.io/introduction/)
