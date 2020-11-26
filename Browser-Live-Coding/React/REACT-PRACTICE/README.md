@@ -14,3 +14,12 @@ npm i gh-pages
 ### start the projects
 
 npm start
+
+Note:
+"predeploy": "npm run build",  runs first 
+    "deploy": "gh-pages -d build"
+
+    always after changes 
+
+
+    
