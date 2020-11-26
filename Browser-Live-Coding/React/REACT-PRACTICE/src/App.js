@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Wrapper from "./components/Wrapper";
+import Axios from "axios";
 
 export default class App extends Component {
   constructor(props) {
