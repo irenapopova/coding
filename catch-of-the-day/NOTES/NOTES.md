@@ -46,4 +46,8 @@ class StorePicker extends React.Component {
 
 export default StorePicker;
 ```
-🛑 I cannot return both a comment and an element, If I want to have a comment have to put it 
+
+🛑 I cannot return both a comment and an element, If I want to have a comment have to put it
+
+Notes
+
