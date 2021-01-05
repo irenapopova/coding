@@ -3,3 +3,6 @@ MVC stands for Model, View, and Controller. MVC separates an application into th
 origin means server 
 
 middleware is just like a function 
+
+MVC - structure
+handlers are the functions that are controlling my requests
