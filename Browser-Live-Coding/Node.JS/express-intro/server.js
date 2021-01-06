@@ -1,5 +1,6 @@
 const express = require("express");
 const indexRouter = require("./routes/indexRoute")
+
 const server = express();
 
 server.use(express.json());
