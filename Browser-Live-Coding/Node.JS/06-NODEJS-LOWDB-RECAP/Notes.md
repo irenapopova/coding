@@ -47,3 +47,7 @@ const express = require"express";
 ```
 
 arrow function doesn't need the word function and we cannot use the = sign without an arrow 
+
+specific export has to wrap in curly brackets and
+whe export specifically have to import specifically
+default export no need to wrap with {}
