@@ -51,3 +51,57 @@ arrow function doesn't need the word function and we cannot use the = sign witho
 specific export has to wrap in curly brackets and
 whe export specifically have to import specifically
 default export no need to wrap with {}
+
+
+### indexController.js
+```js
+//! create GET / ROUTE - ways
+// we are receiving a request on slash "/", slash is the route name, the second is the function, which is called controller,
+// controller/ handler function that controls the req and responses and it takes two arguments
+/* module.exports = IndexController (req, res) => {
+  console.log("I am a Main Server Route");
+  res.send("Hi from server");
+}*/
+
+exports.greeting = (req, res) => {
+  console.log("I am a Main Server Route");
+  /* res.send("Hi from server"); - send data to the browser*/
+}
+
+
+/* const IndexController = (req, res) => {
+  console.log("I am a Main Server Route");
+  res.send("Hi from server");
+}
+module.exports={IndexController} */
+
+```
+EJS
+include repeatable parts of our site (partials) and pass data to my views
+in the following tags I write javascript <%- %>
+<%- include -%>
+<% condition %>
+<%= display value%>
+
+<!-- <h1>Hi, <%=name %></h1> -->
+
+templating inside of the views folder and the rest is standard Node practices
+in the public folder place all the static files
+Tree 
+
+```js
+
+- views
+----- partials
+---------- footer.ejs
+---------- head.ejs
+---------- header.ejs
+----- pages
+---------- index.ejs
+---------- about.ejs
+- package.json
+- server.js
+
+```
+
+With using a server I decide which files the client can have access

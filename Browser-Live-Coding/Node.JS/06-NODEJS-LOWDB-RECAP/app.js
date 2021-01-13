@@ -6,8 +6,8 @@ const app = express();
 
 const setCors = require("./middlewares/security")
 
-const usersRoutes = require("./Routes/usersRoutes")
-const indexRoute = require("./Routes/indexRoute")
+const usersRoutes = require("./routes/usersRoutes")
+const indexRoute = require("./routes/indexRoute")
 //3000 is the development port and process.env.PORT is for production
 const PORT = 3000 || process.env.PORT;
 
@@ -16,7 +16,14 @@ app.use(express.json())
 //use cors middle for my server
 app.use(setCors)
 
+// Template engines 
+// EJS- Embedded Javascript Templates
+// Pug Template
 
+// setting vew engine for  app
+app.set("vew engine", "ejs")
+// serve static files from public folder
+app.use(express.static("public")) // no need to write public in the index.ejs style link path, from here the server knows from where to pick the css file ; 
 
 app.use("/users", usersRoutes)
 app.use("/", indexRoute)

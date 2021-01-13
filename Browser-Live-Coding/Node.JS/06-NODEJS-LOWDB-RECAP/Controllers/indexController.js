@@ -1,19 +1,21 @@
 //! create GET / ROUTE - ways
-// we are receiving a request on slash "/", slash is the route name, the second is the function, which is called controller,
-// controller/ handler function that controls the req and responses and it takes two arguments
-/* module.exports = IndexController (req, res) => {
-  console.log("I am a Main Server Route");
-  res.send("Hi from server");
-}*/
+const path = require("path")
 
-exports.greeting = (req, res) => {
-  console.log("I am a Main Server Route");
-  /* res.send("Hi from server"); - send data to the browser*/
+exports.Index = (request, response) => {
+  console.log("I am Main Server Route");
+  console.log(path.resolve(__dirname, "../views/index.html"))
+  let name = ["Irene", "Daniel", "Adele"]
+  let login = true;
+  // use to send static html file to the client
+  /* response.sendFile(path.resolve(__dirname, "../views/index.html")); */
+  // when using a template engine use the render method 
+  response.render("index", { users, login }) //compile template and send html file to the client, the second argument {name:name} or {name:user} or {users}is the value I want to pass 
+
 }
 
 
-/* const IndexController = (req, res) => {
-  console.log("I am a Main Server Route");
-  res.send("Hi from server");
-}
-module.exports={IndexController} */
+/*   const Index = (request, response) => {
+    console.log("I am Main Server Route");
+    response.send("Hi from Server");
+  }
+  module.exports={Index} */
