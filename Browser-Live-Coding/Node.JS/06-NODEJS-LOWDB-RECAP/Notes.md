@@ -107,4 +107,27 @@ Tree
 With using a server I decide which files the client can have access 
 
 TODO: 
-- TO create login controller file and to import login router
+- TO create login controller file and to import login router 
+
+//MVC
+/* Model (database)
+Views (pages display to client)
+Controllers (handler which handle your request) */
+
+
+
+
+//CommonJS /ES5 way to import modules 
+/* const express = require("express")
+const indexRoute = require('./Routes/indexRoute')
+// initializing express server, creating an instance
+const server = express()
+
+server.use(express.json())
+
+server.get("/:id", (req, res) => {
+  console.log(req.params.id);
+  res.send(req.params.id);
+});
+/* server.use("/", indexRoute); */
+
