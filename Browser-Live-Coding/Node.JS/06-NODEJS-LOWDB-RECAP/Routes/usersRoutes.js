@@ -1,5 +1,12 @@
 const router = require("express").Router()
-const { getSingleUser, getAllUsers, addNewUser, updateUser, deleteUser, deleteAllUsers } = require("../Controllers/usersController")
+const {
+  getSingleUser,
+  getAllUsers,
+  addNewUser,
+  updateUser,
+  deleteUser,
+  deleteAllUsers,
+} = require("../Controllers/userController");
 
 
 //get single user from database
