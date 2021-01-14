@@ -131,3 +131,11 @@ server.get("/:id", (req, res) => {
 });
 /* server.use("/", indexRoute); */
 
+#### 👇 with this code i create users via terminal
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"id":6,"name":"test"}' \
+  http://localhost:3000/users  
+
+  ```  
