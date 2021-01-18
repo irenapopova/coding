@@ -139,3 +139,4 @@ curl --header "Content-Type: application/json" \
   http://localhost:3000/users  
 
   ```  
+use middleware after initialise/create the server
