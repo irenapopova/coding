@@ -1,4 +1,4 @@
-const db = require("../model/db")
+const db = require("../modal/db")
 
 exports.getAllRecords = (req, res, next) => {
   //getting/reading all records from db.json
