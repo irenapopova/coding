@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "id": "1",
+      "title": "title 3",
+      "artist": "Peter",
+      "year": 2021,
+      "price": 26,
+      "image": "this is a url 1"
+    },
+    {
+      "title": "title 2",
+      "artist": "John",
+      "year": 2021,
+      "price": 26,
+      "image": "this is a url 1",
+      "id": "1611060955491"
+    }
+  ],
+  "users": [
+    {
+      "first_name": "user1",
+      "last_name": "John",
+      "email": "test@test.com",
+      "password": "123",
+      "id": "1611067293998"
+    }
+  ],
+  "orders": []
+}
