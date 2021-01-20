@@ -1,11 +1,17 @@
 ### creating MySql Database
-
-### mysql> use mysql
+commands 
+```bash
+ mysql> use mysql
+ mysql> mysql.server.start
+ mysql> mysql.server.stop
+```
+```bash
+ mysql> use mysql
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
 👇 Database changed
-### mysql> show databases;
+👇 mysql> show databases;
     
 +--------------------+
 | Database           |
@@ -17,7 +23,7 @@ You can turn off this feature to get a quicker startup with -A
 +--------------------+
 4 rows in set (0.00 sec)
 
-mysql> create database product_shop;
+ mysql> create database product_shop;
 Query OK, 1 row affected (0.01 sec)
 
 ### mysql> show databases;
@@ -32,18 +38,16 @@ Query OK, 1 row affected (0.01 sec)
 +--------------------+
 5 rows in set (0.00 sec)
 
-### mysql> create table users;
-ERROR 4028 (HY000): A table must have at least one visible column.
-### mysql> create table users(id int primary key auto_increment,name varchar(50),email varchar(50),country varchar(50));
+ mysql> create table users(id int primary key auto_increment,name varchar(50),email varchar(50),country varchar(50));
 Query OK, 0 rows affected (0.01 sec)
 
-### mysql> insert into users (name, email, country)values("Irena","irena6@gmail.com","Germany");
+ mysql> insert into users (name, email, country)values("Irena","irena6@gmail.com","Germany");
 Query OK, 1 row affected (0.01 sec)
 
-### mysql> insert into users (name, email, country)values("Anna","anna6@gmail.com","Germany");
+ mysql> insert into users (name, email, country)values("Anna","anna6@gmail.com","Germany");
 Query OK, 1 row affected (0.00 sec)
 
-### mysql> select * from users;
+ mysql> select * from users;
 +----+-------+------------------+---------+
 | id | name  | email            | country |
 +----+-------+------------------+---------+
@@ -52,7 +56,7 @@ Query OK, 1 row affected (0.00 sec)
 +----+-------+------------------+---------+
 2 rows in set (0.00 sec)
 
-### mysql> select email from users;
+ mysql> select email from users;
 +------------------+
 | email            |
 +------------------+
@@ -61,4 +65,6 @@ Query OK, 1 row affected (0.00 sec)
 +------------------+
 2 rows in set (0.00 sec)
 
-### mysql>
+ mysql>
+```
+
