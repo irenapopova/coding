@@ -1,4 +1,3 @@
-// here to create routes for the user 
 const express = require("express")
 
 const router = express.Router()

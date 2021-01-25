@@ -35,9 +35,10 @@ let connectionOptions = {
 console.log('MySql Connection config:');
 console.log(connectionOptions);
 
+let connection = mysql.createConnection(connectionOptions);
 connection.connect();
 
-
+connection.query('SELECT * FROM')
 /**In express all the controllers are Middlewares */
 /**USE MIDDLEWARE */
 /*app.use(here specify middleware)*/
