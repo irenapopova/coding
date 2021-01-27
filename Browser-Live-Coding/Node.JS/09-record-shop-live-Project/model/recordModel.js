@@ -11,7 +11,7 @@ const RecordSchema = new Schema({
     required: true
   },
   year: {
-    type: String,
+    type: Number,
     required: true
   },
   img: {
@@ -19,8 +19,16 @@ const RecordSchema = new Schema({
     required: true
   },
   price: {
+    type: Number,
+    required: true
+  },
+  currency: {
     type: String,
     required: true
-  }
-
+  },
 });
+
+/* const Records = mongoose.model('records', RecordSchema) 
+module.export=Records
+*/
+module.exports = mongoose.model("records", RecordSchema)

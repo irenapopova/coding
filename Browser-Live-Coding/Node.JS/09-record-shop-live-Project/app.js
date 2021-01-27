@@ -13,7 +13,7 @@ const app = express()
 /* USE MIDDLEWARES */
 /* app.use(here specify middleware) */
 app.use(morgan("dev"))
-app.use(express.json())
+app.use(express.json())// to convert json object received from the client
 
 /* ROUTES */
 app.use("/", indexRoute)
