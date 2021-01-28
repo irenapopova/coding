@@ -1,6 +1,7 @@
 /* EXTERNAL MODULES */
 const express = require("express")
 const morgan = require("morgan")
+const mongoose = require("mongoose")
 const indexRoute = require("./routes/indexRoute")
 const recordsRoute = require("./routes/recordsRoute")
 const usersRoute = require("./routes/usersRoute")
@@ -14,7 +15,10 @@ const app = express()
 /* app.use(here specify middleware) */
 app.use(morgan("dev"))
 app.use(express.json())// to convert json object received from the client
-
+mongoose.connect("mongodb://127.0.0.1:27017/new-record-shop", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 /* ROUTES */
 app.use("/", indexRoute)
 app.use("/api/records", recordsRoute)

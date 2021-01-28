@@ -1,17 +1,37 @@
 const db = require("../model/db")
+const RecordData = require("../model/recordModel")
 
-exports.getAllRecords = (req, res, next) => {
+exports.getAllRecords = async (req, res, next) => {
   //getting/reading all records from db.json
   //db.get("records")=> target this property in db.json
   // .value() that means get value of that property
-  let allRecords = db.get("records").value()
-  res.send({ allRecords })
-}
 
-exports.postAddNewRecord = (req, res, next) => {
+  try {
+    let allRecords = await RecordData.find();
+    res.status(200).send({ allRecords });
+  } catch (err) {
+    let error = new Error(err.message)
+    next(error)
+  }
+};
+
+exports.postAddNewRecord = async (req, res, next) => {
   console.log(req.body)
+  try {
+    const record = new RecordData(req.body)
+    await record.save() // store data in database
+    res.status(200).send({ record })
+  } catch (err) {
+    const error = new Error(err.message)
+    next(error) //take this error and go to the next code
+  }
+
   //add Record into db.json
-  db.get("records").push(req.body).last().assign({ id: new Date().getTime().toString() }).write()
+  db.get("records")
+    .push(req.body)
+    .last()
+    .assign({ id: new Date().getTime().toString() })
+    .write()
   res.send("NEW record added into database")
 }
 
