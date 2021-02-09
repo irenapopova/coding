@@ -18,7 +18,7 @@ schema is the set of rules that tell the database
 Mongoose is an Object Data Modeling (ODM
 
 seeds.js
-````js
+```js
 // importing mongoose 
 const mongoose = require("mongoose")
 const UserData = require("../model/usersModel"); // models
