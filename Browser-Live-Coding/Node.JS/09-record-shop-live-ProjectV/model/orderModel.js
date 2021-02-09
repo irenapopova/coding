@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { time } = require("faker");
 const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
@@ -6,10 +7,8 @@ const OrderSchema = new Schema({
     type: Number,
     required: true,
   },
-  record: {
-    type: String,
-    required: true,
-  }
+  records: [{ ref: "records", type: mongoose.Schema.Types.ObjectId }],
+  user: { ref: "users", type: mongoose.Schema.Types.ObjectId }
+});
 
-})
-module.exports = mongoose.model("orders", OrderSchema)
+module.exports = mongoose.model("orders", OrderSchema);
