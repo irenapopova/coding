@@ -5,6 +5,8 @@ const router = express.Router()
 const { getAllRecords, postAddNewRecord, putUpdateRecord, deleteSingleRecord, getSingleRecord } = require("../controllers/recordsController")
 const db = require("../model/db")
 
+const recordsRules= require("../lib/validationRules4records")
+const Validation = require("../middlewares/validation")
 /* GET ALL RECORDS FROM RESOURCES */
 router.get("/", getAllRecords)
 

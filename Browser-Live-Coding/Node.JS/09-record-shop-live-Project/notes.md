@@ -18,13 +18,13 @@ schema is the set of rules that tell the database
 Mongoose is an Object Data Modeling (ODM
 
 seeds.js
-````js
+```js
 // importing mongoose 
 const mongoose = require("mongoose")
 const UserData = require("../model/usersModel"); // models
 const faker = require("faker");
 
-``
+
 // connect the application with mongoDB 
 mongoose.connect("mongodb://127.0.0.1:27017/new-record-shop", { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("database connect"))
 
@@ -139,7 +139,7 @@ Repeat the process for your users and orders controllers.
 
 Task 06 - Validation and Sanitization
 In this task we will introduce data validation. How we will we know that the format of the email the user inserted is valid? Using express-validator we will validate our data before we save them in our database. If something is not valid, we will return a detailed error message to the user. After validation, we will sanitize our data using express-validator. Validation is about making sure our data are in the right format. Sanitzation though is all about making sure the data are also noise-free. No extra spaces, no uppercase mixed with lowercase, normalized emails etc.
-TODO
+### TODO
 Install express-validator.
 Validate data for the user schema.
 After validation of the data, please sanitize them as well.
@@ -148,3 +148,47 @@ create a custom validation middleware boilerplate and bring all your validators 
 to bundle up the middlewares put them inside an array;
 when creating a bandle , put everything inside an array 
 
+
+#### in validation.js
+
+```js
+const { validationResult } = require("express-validator")
+
+const Validation = (rules) => {
+  return [
+    ...rules,
+    //custom middleware
+    (req, res, next) => {
+      const result = validationResult(req);
+      console.log(result);
+      if (result.errors.length === 0) {
+        next();
+      } else {
+        let errorObject = new Error();
+        let error = result.errors.map((err) => {
+          return { [err.param]: err.msg };
+        });
+        errorObject.message = error;
+        next(errorObject);
+      }
+    },
+  ];
+};
+
+module.exports = Validation;
+```
+
+
+
+#### Relation
+Relations relation relations. The fact is that MongoDB is a NoSQL database. It means that it is non-relational, among other things. To implement a kind of relations between documents, we use references by IDs or embed documents directly. In the task we will update our code in order to create relations between our models. We can see that an order contains the id of a record but when we retrieve an order we only see the id and not the data of the record as well. We will introduce one to one and one to many relationships between our models and populate data when needed.
+Story: Our client, the record store, would like to be able to have the addresses of each user in a spesific format. They would also like to see the data of a record when an order is being retrieved so they can make their shopping cart look nice.
+#### TODO
+Create a new schema called address containing a street and a city.
+Connect the address schema with our user schema (1-to-1).
+Update your controlles so when you create/delete/post/retrieve a new user, a new address will be created/deleted/posted/retrieved as well.
+Using refs, connect the record schema with the order one (1-to-many).
+
+
+embedded document is a nested document 
+or create references 
