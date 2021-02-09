@@ -78,3 +78,73 @@ user.save().then(() => {
 // close mongoDB connection 
 // synchronous code 
 ```
+
+
+records/:id -> a GET that will return a record based on the id
+records/:id -> a PUT that will update a record based on the id
+records/:id -> a DELETE that will delete a record based on the id
+create endpoints for the users and orders models. A user should contain a first name, a last name, an email, a password. An order should contain a record id and a quantity property. 
+
+more properties
+
+Users Model
+users -> GET all users
+users/:id -> GET a user
+users -> POST a user
+users/:id -> PUT a user
+users/:id -> DELETE a user
+Orders Model
+orders -> GET all orders
+orders/:id -> GET an order
+orders -> POST an order
+orders/:id -> PUT an order
+orders/:id -> DELETE an order
+
+
+What is Database?
+What is DBMS?
+What is SQL?
+What is RDBMS?
+SQL Query Command
+Working with MySql
+
+TODO:
+MongoDB Intro.
+Advantages and Disadvantages.
+Relational databases VS Non relational databases.
+Installation of MongoDB Shell.
+MongoDB shell commands.
+
+Task 04 - Mongoose and Seeding
+In this task we will introduce Mongoose. Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB. We will learn how to setup Mongoose and how to connect it with our app. We will create our user models and schemas and define exactly how a record/user/order object will look. The next step will be to create a feed function that will feed our database with some fake data so we will be able to test all our endpoints straight away after initialising our server.
+TODO:
+Please set up mongoose in your server.
+Create a data schema and a model for our records, users and orders.
+Write a seed script using faker that will run everytime we start our project. If the database is empty, it will feed it some records, orders and users.
+
+TODO:
+Recap asynchronous and synchronous code
+Recap Promises
+Recap Async-await
+Write a seed script using faker that will run everytime we start our project. If the database is empty, it will feed it some records, orders and users.
+
+### Task 05 - Mongoose and Controllers
+
+In this task will update our controllers to start communicating with our database. Lowdb is no longer needed, so we will get rid of it's structure. We will dive into Mongoose API and introduce methods that establish communication with our database. Using Mongoose we will read data from the database, insert new records and manipulate already stored data. We will also introduce Robo 3T, a MongoDB GUI that will help us follow what is happening in our database whenever we update something.
+TODO:
+Please update your record's controller using Mongoose.
+Make sure all API endpoints for records work as they should.
+Repeat the process for your users and orders controllers.
+
+
+Task 06 - Validation and Sanitization
+In this task we will introduce data validation. How we will we know that the format of the email the user inserted is valid? Using express-validator we will validate our data before we save them in our database. If something is not valid, we will return a detailed error message to the user. After validation, we will sanitize our data using express-validator. Validation is about making sure our data are in the right format. Sanitzation though is all about making sure the data are also noise-free. No extra spaces, no uppercase mixed with lowercase, normalized emails etc.
+TODO
+Install express-validator.
+Validate data for the user schema.
+After validation of the data, please sanitize them as well.
+create a custom validation middleware boilerplate and bring all your validators there.
+
+to bundle up the middlewares put them inside an array;
+when creating a bandle , put everything inside an array 
+
