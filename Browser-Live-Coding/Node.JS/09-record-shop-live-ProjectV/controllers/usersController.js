@@ -1,50 +1,71 @@
-const db = require("../model/db")
-
-exports.getAllUsers = (req, res, next) => {
-  //getting/reading all Users from db.json
-  //db.get("Users")=> target this property in db.json
-  // .value() that means get value of that property
-  let allUsers = db.get("users").value()
-  res.send({ allUsers })
-}
-
-exports.postAddNewUser = (req, res, next) => {
-  console.log(req.body)
-  //add User into db.json
-  db.get("users").push(req.body).last().assign({ id: new Date().getTime().toString() }).write()
-  res.send("NEW User added into database")
-}
-
-exports.putUpdateUser = (req, res, next) => {
-  const { id } = req.params
-  //selector/pointer //finding that User //update properties //store changes
-  db.get("users").find({ id }).assign(req.body).write()
-
-  res.send("User updated")
-}
-
-exports.deleteSingleUser = (req, res, next) => {
-  const { id } = req.params
-  //selector/pointer //finding that User //deleting User //store changes
-  let User = db.get("users").find({ id }).value()
-  if (User) {
-    db.get("users").remove({ id }).write()
-    res.send("User deleted")
-  } else {
-    let error = new Error("no such User found in database")
-    error.status = 404
-    next(error)
+const UserData = require("../model/userModel");
+exports.getAllUsers = async (req, res, next) => {
+  //getting all users from mongoDB
+  try {
+    let allUsers = await UserData.find();
+    res.status(200).send({ allUsers });
+  } catch (err) {
+    next(err);
   }
+};
 
-}
+exports.postAddNewUser = async (req, res, next) => {
+  /*    console.log(req.body) */
+  //adding new User into mongoDB
 
-exports.getSingleUser = (req, res, next) => {
-  const { id } = req.params
-  let singleUser = db.get("users").find({ id }).value()
-  /*  res.send({singleUser}) */
-  res.status(200).json({ success: true, User: singleUser })
-  /*  res.status(404).json({success:false,message: "we couldn't find User with that specified ID"}) */
-}
+  try {
+    const user = new UserData(req.body);
+    await user.save(); //store data into database
+    res.status(200).send({ user });
+  } catch (err) {
+    console.log(err.message);
+    /*  res.status(404).send({err:err.message}) */
+    next(err);
+  }
+};
+
+exports.putUpdateUser = async (req, res, next) => {
+  const { id } = req.params;
+  //finding existing user with that id in database and update
+  try {
+    const updatedUser = await UserData.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res.status(200).send({ updatedUser });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.deleteSingleUser = async (req, res, next) => {
+  const { id } = req.params;
+  //finding that User //deleting User
+  try {
+    const UserDeleted = await UserData.findByIdAndRemove(id);
+    if (UserDeleted) {
+      res.status(200).send({ UserDeleted });
+    } else {
+      res.status(404).send("Already Deleted that record");
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getSingleUser = async (req, res, next) => {
+  const { id } = req.params;
+  //get/read single user from mongoDB
+  try {
+    const user = await UserData.findById(id).select("-_id -__v");
+    if (user) {
+      res.status(200).send({ user });
+    } else {
+      res.status(404).send("No such record found with that Id");
+    }
+  } catch (err) {
+    next(err);
+  }
+};
 
 //CRUD operation
 //RESTful API  representational state transfer
