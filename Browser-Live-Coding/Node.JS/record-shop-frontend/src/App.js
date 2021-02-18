@@ -40,6 +40,52 @@ function App(props) {
     }
   };
 
+  return (
+    <MyContext.Provider
+      value={{
+        isLogin,
+        setIsLogin,
+        userData,
+        setUserData,
+        token,
+        setToken,
+        records,
+        setRecords,
+      }}
+    >
+      <div className="App">
+        <h1>Record Shop</h1>
+        <ul>
+          <Link to="/">
+            <li>Home</li>{" "}
+          </Link>
+          {!isLogin && (
+            <Link to="/signup">
+              <li>Signup</li>
+            </Link>
+          )}
+          {!isLogin && (
+            <Link to="/login">
+              <li>Login</li>{" "}
+            </Link>
+          )}
+          {isLogin && (
+            <Link to="/profile">
+              <li>Profile</li>{" "}
+            </Link>
+          )}
+          {isLogin && (
+            <Link to="/records">
+              <li>Records</li>{" "}
+            </Link>
+          )}
+          {isLogin && (
+            <span style={{ color: "darkblue", textDecoration: "underline", cursor: "pointer" }}>
+              <li onClick={logout}>Logout</li>{" "}
+            </span>
+          )}
+        </ul>
+
 
   
 export default withRouter(App);
