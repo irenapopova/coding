@@ -86,6 +86,18 @@ function App(props) {
           )}
         </ul>
 
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/records" component={Records} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </MyContext.Provider>
+  );
+}
 
-  
+
 export default withRouter(App);
