@@ -4,7 +4,8 @@ const router = express.Router()
 
 /* IMPORTING CONTROLLERS */
 const { index } = require("../controllers/indexController")
-
+const userModel = require("..model/userModel")
+const 
 
 router.get("/", index)
 
